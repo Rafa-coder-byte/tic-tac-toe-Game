@@ -1,0 +1,133 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.game{
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* 3 columnas */   /* 2 filas */
+  gap: 10px; 
+}
+
+.square{
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  border-color: aliceblue;
+  border-width: 1px;
+  border-radius: 20px;
+  border-style: solid;
+}
+
+.turn {
+  width: 220px;
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  font-size: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.square.is-selected {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  border-color: aliceblue;
+  border-width: 1px;
+  border-radius: 20px;
+  border-style: solid;
+  background-color: rgb(42, 42, 66);
+
+}
+
+/* Fondo oscuro semitransparente */
+.modal-overlay {
+  position: absolute;
+  z-index: 1000;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* Contenedor general del modal */
+.modal-content {
+  min-width: 320px;
+  max-width: 90vw;
+  padding: 2rem 2.5rem;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  animation: modalFadeIn 0.3s;
+}
+
+/* Animación de entrada */
+@keyframes modalFadeIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Estilos para Winner */
+.modal-winner {
+  background: linear-gradient(120deg, #ffe259 0%, #ffa751 100%);
+  border: 3px solid #f6b93b;
+}
+
+.modal-winner h1 {
+  color: #2d3436;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Estilos para Draw */
+.modal-draw {
+  background: linear-gradient(120deg, #bdc3c7 0%, #2c3e50 100%);
+  border: 3px solid #636e72;
+}
+
+.modal-draw h1 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Botón común para ambos */
+.modal-btn {
+  margin-top: 1.5rem;
+  padding: 0.7rem 2.2rem;
+  background: linear-gradient(90deg, #00b894, #00cec9);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.modal-btn:hover {
+  background: linear-gradient(90deg, #00b894, #0984e3);
+  transform: scale(1.05);
+}
